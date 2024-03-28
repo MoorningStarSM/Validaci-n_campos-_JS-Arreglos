@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>FORMULARIO 2</title>
+    
+    <script>
+        var nameUser = Array('Eduardo', 'MorningStar', 'Ariel', 'Victor');
+        var passUser = Array('12345', 'abcde', 'admin', 'Perce4');
+    
+        function validar() {
+            var usuario = document.getElementById("usuario").value;
+            var pass = document.getElementById("pass").value;
+            var rol = document.getElementById("rol").value;
+    
+            if (usuario === "" || pass === "" || rol === "0") {
+                alert("Faltan campos por llenar");
+            } else {
+                var DATOS_EXISTEN = false; 
+    
+                for (var i = 0; i < nameUser.length; i++) {
+                    if (usuario === nameUser[i] && pass === passUser[i]) {
+                        DATOS_EXISTEN = true; 
+                        break; 
+                    }
+                }
+    
+                if (DATOS_EXISTEN) {
+                    alert('Bienvenido '+nameUser[i] );
+                } else {
+                    alert('Datos incorrectos');
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <form name="Eduardo" id="Eduardo" method="post" action="recibe.php">
+        <input type="text" name="usuario" id="usuario" placeholder="Usuario" /><br>
+        <input type="text" name="pass" id="pass" placeholder="Escribe tu pass" /><br>
+        <select name="rol" id="rol"> 
+            <option value="0">Selecciona</option>
+            <option value="1">Gerente</option>
+            <option value="2">Ejecutivo</option>
+        </select><br>
+        <input type="button" onclick="validar();" value="Enviar" />
+    </form>
+</body>
+</html>
