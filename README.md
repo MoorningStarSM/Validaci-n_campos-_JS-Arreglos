@@ -1,0 +1,1 @@
+En este codigo, codifique un formulario que recopila datos del usuario y  su contraseña, así como el rol seleccionado, y luego valida si las credenciales son correctas comparándolas con datos predefinidos almacenados en matrices JS.
